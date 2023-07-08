@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
 html,
 body {
   padding: 0;
@@ -13,10 +15,10 @@ body {
   flex-direction: column;
   justify-content: center;
   background-image: linear-gradient(
-    230deg,
-    hsl(0deg 0% 0%) 36%,
-    hsl(274deg 20% 13%) 80%,
-    hsl(275deg 39% 22%) 90%,
+    150deg,
+    hsl(0deg 0% 0%) 20%,
+    hsl(274deg 20% 13%) 70%,
+    hsl(275deg 39% 22%) 85%,
     hsl(283deg 100% 27%) 100%
   );
   color: #fff;
@@ -29,16 +31,33 @@ body {
   justify-content: space-between;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #nav-logo {
-  width: 20px;
+  margin: 0 4rem;
+  width: 100px;
+  mix-blend-mode: screen;
+}
+
+#nav-logo:hover {
+  content: url("./img/oni-invert.png");
 }
 
 .list-container {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6rem;
 }
 
 ul {
   list-style: none;
+  width: 100%;
 }
 
 .main-nav ul {
@@ -53,13 +72,18 @@ nav a {
   transition: all 0.5s ease;
 }
 
+.contact-links a {
+  width: 100px;
+  height: 100px;
+}
+
 nav li {
   transition: all 0.5s ease;
 }
 
 .main-nav a {
-  font-family: sans-serif;
-  font-size: 3rem;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 2.5rem;
 }
 
 nav a:visited {
@@ -71,9 +95,9 @@ nav a:active {
 }
 
 nav a:hover {
-  color: greenyellow;
+  color: #adff2f;
   text-decoration: none;
-  text-shadow: 4px 0 5px #ec7ce0;
+  text-shadow: 0 3px 5px #ba4aaf;
 }
 
 nav li:hover {
@@ -86,21 +110,8 @@ header {
   top: 0;
   left: 0;
   background-color: #221338a8;
-  box-shadow: 0 2px 20px #59565c;
-}
-
-.main-background-image {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-.main-background-image img {
-  opacity: 0.6;
-  border-radius: 2px;
+  box-shadow: 0 2px 20px #4a6930;
+  padding: 1rem 0;
 }
 
 main {
@@ -116,24 +127,76 @@ label[for="toggle"] {
   position: fixed;
   top: 25px;
   left: 25px;
-  color: #fff;
   z-index: 6;
   font-size: 3rem;
   cursor: pointer;
 }
 
 .dropdown,
-.hamburger,
+.fa-bars,
 #toggle {
   display: none;
 }
 
+.fa-bars::before {
+  display: none;
+}
+
+#about {
+  display: flex;
+  justify-content: right;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+.text-container {
+  width: 30%;
+  text-align: justify;
+  margin-right: 10rem;
+}
+
+.contact {
+  width: 100%;
+  height: 100px;
+}
+
+.contact-links {
+  width: 100%;
+  height: 100px;
+}
+
+.contact-logo {
+  width: 90px;
+  height: 90px;
+}
+
+footer {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
+  background-color: #09070ca8;
+  display: flex;
+  justify-content: center;
+}
+
+footer p {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .main-nav {
+    justify-content: center;
+  }
+
+  .list-container {
     display: none;
   }
 
-  .hamburger {
+  .fa-bars::before {
     display: block;
   }
 
@@ -148,6 +211,7 @@ label[for="toggle"] {
     bottom: 0;
     margin: 0;
     padding: 0;
+    font-family: "IBM Plex Sans", sans-serif;
   }
 
   #toggle:checked ~ .dropdown {
@@ -160,7 +224,7 @@ label[for="toggle"] {
     align-items: flex-start;
     justify-content: space-around;
     height: 70vh;
-    margin: 85px 0 0;
+    margin: 4rem 0 0;
     padding: 0;
     transition: top 1s;
   }
@@ -171,9 +235,7 @@ label[for="toggle"] {
   }
 
   .dropdown li a {
-    padding: 50px 20px 50px 30px;
+    padding: 2px 0 10px 30px;
     text-decoration: none;
-    color: #fff;
-    font-family: sans-serif;
   }
 }
