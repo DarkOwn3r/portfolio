@@ -134,7 +134,7 @@ label[for="toggle"] {
   border-radius: 0.5rem 0.5rem 0;
 }
 
-#side-info {
+#side-arrow {
   display: flex;
   width: 4rem;
   background: none;
@@ -145,7 +145,7 @@ label[for="toggle"] {
   transition: all 0.5s ease;
 }
 
-#side-info:hover {
+#side-arrow:hover {
   transform: scale(1.2);
 }
 
@@ -203,6 +203,14 @@ footer p {
     padding: 0;
     background-color: #dc2fff63;
     font-family: "IBM Plex Sans", sans-serif;
+  }
+
+  .text-container img::before {
+    display: block;
+  }
+
+  #side-toggle:checked ~ #about {
+    right: 0;
   }
 
   #toggle:checked ~ .dropdown {
